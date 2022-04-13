@@ -1432,12 +1432,12 @@ def connect(
     assert not worker.connected, error_message
     assert worker.cached_functions_to_run is not None, error_message
 
-    # Enable nice stack traces on SIGSEGV etc.
-    try:
-        if not faulthandler.is_enabled():
-            faulthandler.enable(all_threads=False)
-    except io.UnsupportedOperation:
-        pass  # ignore
+#     # Enable nice stack traces on SIGSEGV etc.
+#     try:
+#         if not faulthandler.is_enabled():
+#             faulthandler.enable(all_threads=False)
+#     except io.UnsupportedOperation:
+#         pass  # ignore
 
     worker.gcs_client = node.get_gcs_client()
     assert worker.gcs_client is not None
